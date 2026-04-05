@@ -1,6 +1,6 @@
 
 // typing
-const text = "Mahamadou Cissé"; // Teks yang akan dianimasikan
+const text = "Hello, I'm Mahamadou Cissé"; // Teks yang akan dianimasikan
 let index = 0;
 let isDeleting = false;
 const speed = 100; // Kecepatan mengetik

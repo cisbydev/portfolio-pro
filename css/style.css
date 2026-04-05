@@ -19,64 +19,53 @@ body {
 
 }
 
-.partie-self {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 100vh;
-   
+    /* PARTIE HOME PAGE INDEX */
+
+.profile1-home {
+  width: 60%;
+  height: auto;
+}
+.partie-home {  
+  font-size: 18px;
+  font-weight: 300;
 }
 
-div.image-profile {
-    position: relative;
-}
-img.image-profile {
-    width: 60%;
-    height: auto;
-    object-fit: cover;
-    transform: translateY(-100px);
-    position: relative;
-    z-index: 2;
-}
-img.image-color-skyblue {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 280px;
-    height: 260px;
-    z-index: 1;
-    top: 40px;
-    left: 24%;
+/* -------------- TITRE ANIMATION DU NOM MAHAMADOU --------- */
+
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--text-color);
+  }
 }
 
-.telecharger_cv {
-    display: flex;
-    justify-content: center;
+#typing-text {
+  color: black;
+  border-right: 3.5px solid black; /* Simulasi kursor yang berkedip */
+  white-space: nowrap;
+  overflow: hidden; /* Agar teks tidak meluap */
+  font-size: 100%;
+  font-weight: 700;
+  line-height: 1.5; /* Pastikan line-height tetap ada */
+  display: inline-block; /* Agar ukuran elemen sesuai dengan teks */
+  min-height: calc(2.6rem * 1.5); /* Menjaga tinggi elemen saat teks belum muncul */
 }
-.partie_cv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 58px;
 
+#typing-text {
+  animation: blink 0.7s steps(2) infinite;
 }
+      /* ------PARTIE ICONS --------- */
 .wrapper {
   display: inline-flex;
   list-style: none;
   height: 120px;
   width: 100%;
-  padding-bottom: 70px;
+  padding-top: 10px;
   font-family: "Poppins", sans-serif;
   justify-content: center;
-}
-
-
-.partie_icons li a {
-  color: #000;
-}
-
-.partie_icons li a:hover {
-  color: white;
 }
 
 .wrapper .icon {
@@ -99,7 +88,7 @@ img.image-color-skyblue {
 .wrapper .tooltip {
   position: absolute;
   top: 0;
-  font-size: 14px;
+  font-size: 16px;
   background: #fff;
   color: #fff;
   padding: 5px 8px;
@@ -129,27 +118,40 @@ img.image-color-skyblue {
   pointer-events: auto;
 }
 
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
 .wrapper .whatsapp:hover,
 .wrapper .whatsapp:hover .tooltip,
-.wrapper .whatsapp:hover .tooltip::before{
-background:#25D366;
-color:#fff;
+.wrapper .whatsapp:hover .tooltip::before {
+  background: linear-gradient(100deg, green, green 100%);
+  color: #fff;
 }
 
 .wrapper .youtube:hover,
 .wrapper .youtube:hover .tooltip,
-.wrapper .youtube:hover .tooltip::before{
-background:#FF0000;
-color:#fff;
+.wrapper .youtube:hover .tooltip::before {
+  background: linear-gradient(100deg, red, rgb(172, 2, 2) 100%);
+  color: #fff;
 }
 
 .wrapper .tiktok:hover,
 .wrapper .tiktok:hover .tooltip,
-.wrapper .tiktok:hover .tooltip::before{
-background:#000;
-color:#fff;
+.wrapper .tiktok:hover .tooltip::before {
+  background: linear-gradient(100deg, #000, rgba(0, 0, 0, 0.925) 100%);
+  color: #fff;
 }
-
+.wrapper a {
+  color: black;
+  text-decoration: none;
+}
+.wrapper .icon:hover a {
+  color: white;
+}
+  /* ---------FIN----------- */
+  /* TELECHARGE CV  */
 .botao {
   width: 125px;
   height: 45px;
@@ -166,10 +168,6 @@ color:#fff;
   cursor: pointer;
   filter: drop-shadow(0 0 10px rgba(59, 190, 230, 0.568));
   transition: 0.5s linear;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
 }
 
 .botao .mysvg {
@@ -234,110 +232,45 @@ color:#fff;
     transform: translateY(20px);
   }
 }
-
-
-@keyframes blink {
-  0%,100%{
-    border-color: transparent;
-  }
-  50%{
-    border-color: black;
-  }
-}
-
-#typing-text{
-  color: black;
-  border-right: 3.5px solid black;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 34px;
-  font-weight: 500;
-  line-height: 1.5;
-  display: inline-block;
-  min-height: calc(1 * 1.5em);
-  animation: blink 0.7s steps(2) infinite;
-}
-
-
+/* --------------FIN--------------- */
+  
 /* PRESENTATION */
 
- .about_partie_presentation h2 {
-    font-weight: bold;
-    /* padding-bottom: 20px; */
-    color: #1A237E;
-    letter-spacing: 2px;
+.partie-info {
+  background: linear-gradient(135deg, #4FC3F7 0%, #1A237E 100%);
+  color: white;
+  padding: 60px 0;
+  display: flex;
+  justify-content: space-around;
 }
-.about_partie_presentation p {
-    font-size: 16px;
+.partie-info h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+  color: #fff;
+  text-shadow: 1px 1px 15px #000;
 }
-
-.partie_presentation {
-  background-color: #4FC3F7;
+.partie-info h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 15px #000;
+}
+.profile2-info {
   width: 100%;
   height: auto;
-  margin-top: -176px;
-  /* margin-top: -200px; */
+  border-radius: 30px;
+  box-shadow: 1px 0px 12px 0px black;
 }
-
-.all_presentations {
+.about-info {
+  width: 50%;
+  padding: 0 20px;
+}
+.info-localisation {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 15px;
+  text-align: center;;
 }
-
-.title_partie_presentation {
-  font-weight: bold;
-  padding-top: 30px;
-  padding-bottom: 80px;
-  color: #1A237E;
-  letter-spacing: 2px;
-}
-
-
-div.profile_partie_presentation {
-    width: 40%;
-    height: auto;
-    object-fit: cover;
-    transform: translateY(-70px);
-}
-
-div.profile_partie_presentation {
-    position: relative;
-}
-
-img.profile_partie_presentation {
-    min-width: 40%;
-    height: auto;
-    background-color: white;
-    border-radius: 100px;
-    z-index: 2;
-    position: relative;
-}
-.profile_color_presentation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 460px;
-    height: 300px;
-    z-index: 1;
-    top: 300px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 20px 17px white;
-}
-.about_partie_presentation {
-    padding-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto; 
-    width: 50% ;
-  
-}
-.info_personnel_partie_presentation {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-
   /* C'EST ICISDDDDDGGFGDFSSSSSSSSSSSSSSSSSSSSSSS */
 
 
